@@ -13,6 +13,11 @@ function main() {
         parsed_data.mowers[i] = result.mower;
     }
     mowerService.printAllPositions(parsed_data.mowers);
+    process.argv.forEach(function (val, index, array) {
+        if (index === 2 && val === "--garden") {
+            drawerService.printGarden(garden);
+        }
+    });
 }
 
 main();
